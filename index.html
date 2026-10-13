@@ -16,7 +16,7 @@ permalink: /
     </ul>
     <p><a href="{{ '/arquivo/' | relative_url }}">Ver todas as publicações →</a></p>
     {% else %}<p>Nenhuma publicação ainda.</p>{% endif %}
-    <h2>Browse by Post Category:</h2>
+    <h2>Tags dos Posts:</h2>
     {% assign sorted_tags = site.tags | sort %}
     {% if sorted_tags.size > 0 %}
     <ul class="post-categories">
