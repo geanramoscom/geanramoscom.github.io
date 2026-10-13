@@ -20,6 +20,7 @@ exclude:
 
 # Troque por "/img/logo.png" quando o dominio geanramos.com estiver ativo.
 logo_url: "https://geanramos.com/img/logo.png"
+support_url: "#"
 
 # Inscricoes: preencha com a URL real do formulario do provedor de newsletter.
 newsletter_form_action: ""
