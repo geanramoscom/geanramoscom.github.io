@@ -1,0 +1,22 @@
+title: "Gean Ramos"
+description: "Blog pessoal de Gean Ramos"
+url: "https://geanramos.com"
+baseurl: ""
+lang: pt-BR
+timezone: America/Belem
+permalink: /posts/:title/
+markdown: kramdown
+include:
+  - _assets
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .github
+  - COPYING-NOTE.md
+
+# Troque por "/img/logo.png" quando o dominio geanramos.com estiver ativo.
+logo_url: "http://187.77.39.119/img/logo.png"

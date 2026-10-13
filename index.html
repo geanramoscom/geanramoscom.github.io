@@ -1,0 +1,30 @@
+---
+layout: default
+title: Gean Ramos
+permalink: /
+---
+<div class="site-page zoomable">
+  <header class="site-page-header"><h1>Welcome</h1></header>
+  <div class="trix-content e-content">
+    <p>Bem-vindo ao meu blog pessoal. Tecnologia, ideias e projetos.</p>
+    <h2>Latest Posts:</h2>
+    {% if site.posts.size > 0 %}
+    <ul class="latest-posts">
+      {% for post in site.posts limit:12 %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> <small>{{ post.date | date: '%d/%m/%Y' }}</small></li>
+      {% endfor %}
+    </ul>
+    <p><a href="{{ '/arquivo/' | relative_url }}">Ver todas as publicações →</a></p>
+    {% else %}<p>Nenhuma publicação ainda.</p>{% endif %}
+    <h2>Browse by Post Category:</h2>
+    {% assign sorted_tags = site.tags | sort %}
+    {% if sorted_tags.size > 0 %}
+    <ul class="post-categories">
+      {% for tag in sorted_tags %}
+      <li><a href="{{ '/tags/' | relative_url }}#{{ tag[0] | slugify }}">{{ tag[0] | escape }}</a> ({{ tag[1].size }})</li>
+      {% endfor %}
+    </ul>
+    <p><a href="{{ '/tags/' | relative_url }}">Ver todas as tags →</a></p>
+    {% else %}<p>As tags aparecerão aqui quando houver publicações.</p>{% endif %}
+  </div>
+</div>
