@@ -4,7 +4,7 @@ url: "https://geanramos.com"
 baseurl: ""
 lang: pt-BR
 timezone: America/Belem
-permalink: /posts/:title/
+permalink: /p/:title.html
 markdown: kramdown
 include:
   - _assets
@@ -19,7 +19,7 @@ exclude:
   - COPYING-NOTE.md
 
 # Troque por "/img/logo.png" quando o dominio geanramos.com estiver ativo.
-logo_url: "http://187.77.39.119/img/logo.png"
+logo_url: "https://geanramos.com/img/logo.png"
 
 # Inscricoes: preencha com a URL real do formulario do provedor de newsletter.
 newsletter_form_action: ""
