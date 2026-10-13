@@ -1,7 +1,14 @@
 
 
     <hr class="site-hr-above-user-site-footer">
-    <footer class="user-site-footer"><div class="trix-content"><p style="text-align:center">© {{ site.time | date: "%Y" }} {{ site.title }}</p></div></footer>
+    <footer class="user-site-footer">
+  <div class="trix-content">
+    {% if site.support_url and site.support_url != "" %}
+    <blockquote><p style="text-align:center;">Gostou do conteúdo? <a href="{{ site.support_url | escape }}" target="_blank" rel="noopener noreferrer">Apoie meu trabalho com um café ☕</a>.</p></blockquote>
+    {% endif %}
+    <p style="text-align:center;"><em>Todo o conteúdo © {{ site.time | date: "%Y" }} {{ site.title }}. Todos os direitos reservados.</em></p>
+  </div>
+</footer>
 
 
     <div id="site-custom-body-code"><div id="footer88x31">

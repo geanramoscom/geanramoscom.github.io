@@ -20,3 +20,9 @@ exclude:
 
 # Troque por "/img/logo.png" quando o dominio geanramos.com estiver ativo.
 logo_url: "http://187.77.39.119/img/logo.png"
+
+# Inscricoes: preencha com a URL real do formulario do provedor de newsletter.
+newsletter_form_action: ""
+newsletter_email_field: "email"
+# Link opcional de apoio, sem redirecionar para o criador do template.
+support_url: ""
