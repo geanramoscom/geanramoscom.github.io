@@ -11,11 +11,7 @@
           <img alt="Gean Ramos" class="avatar u-photo" aria-hidden="true" src="{{ site.logo_url | default: '/img/logo.png' }}" width="72" height="72">
 </a>      <div>
         <div class="site-title m-0"><a class="p-name u-url" href="{{ site.baseurl }}/">Gean Ramos</a></div>
-          <nav class="site-nav"><ul>
-    <li><a class="site-nav-link" href="{{ '/arquivo/' | relative_url }}">Arquivo</a></li>
-    <li><a class="site-nav-link" href="{{ '/tags/' | relative_url }}">Tags</a></li>
-    <li><a class="site-nav-link" href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
-  </ul></nav>
+          {% include site-nav.html %}
       </div>
     </header>
 
