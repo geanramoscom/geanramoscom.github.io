@@ -2,4 +2,11 @@
   <li><a class="site-nav-link" href="{{ '/arquivo/' | relative_url }}">Arquivo</a></li>
   <li><a class="site-nav-link" href="{{ '/tags/' | relative_url }}">Tags</a></li>
   <li><a class="site-nav-link" href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+  <li><button type="button" id="search-toggle" class="site-nav-link" aria-label="Pesquisar publicações" aria-controls="site-search" aria-expanded="false" data-index-url="{{ '/search.json' | relative_url }}" style="background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;">🔍</button></li>
 </ul></nav>
+<div id="site-search" hidden style="margin-top:.75rem;max-width:440px;">
+  <label for="search-input">Pesquisar publicações</label>
+  <input id="search-input" type="search" placeholder="Digite uma palavra..." autocomplete="off" style="width:100%;box-sizing:border-box;margin-top:.25rem;">
+  <div id="search-results" role="status" aria-live="polite"></div>
+</div>
+<script defer src="{{ '/assets/search.js' | relative_url }}"></script>
