@@ -3,28 +3,56 @@ layout: default
 title: Gean Ramos
 permalink: /
 ---
+<style>
+  .home-intro { margin-bottom: 2.2rem; }
+  .home-intro p { margin: .65rem 0; }
+  .home-quote { margin: 1.2rem 0 0; padding: .2rem 0 .2rem 1.15rem; border-left: 3px solid currentColor; font-style: italic; opacity: .86; }
+  .home-section-title { font-size: 1rem !important; line-height: 1.45; font-weight: 600; margin: 1.8rem 0 .85rem; }
+  .home-posts { list-style: none; margin: 0; padding: 0; }
+  .home-posts li { display: grid; grid-template-columns: 5.4rem minmax(0,1fr); gap: .85rem; align-items: baseline; padding: .32rem 0; }
+  .home-posts time { font-size: .86rem; opacity: .67; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .home-posts a { font-size: .96rem; line-height: 1.55; }
+  .home-secondary-link { margin-top: .9rem; font-size: .9rem; }
+  @media (max-width: 420px) { .home-posts li { grid-template-columns: 4.25rem minmax(0,1fr); gap: .55rem; } }
+</style>
 <div class="site-page zoomable">
   <header class="site-page-header"><h1>Welcome</h1></header>
   <div class="trix-content e-content">
-    <p>Bem-vindo ao meu blog pessoal. Tecnologia, ideias e projetos.</p>
-    <h2>Latest Posts:</h2>
-    {% if site.posts.size > 0 %}
-    <ul class="latest-posts">
-      {% for post in site.posts limit:12 %}
-      <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> <small>{{ post.date | date: '%d/%m/%Y' }}</small></li>
-      {% endfor %}
-    </ul>
-    <p><a href="{{ '/arquivo/' | relative_url }}">Ver todas as publicações →</a></p>
-    {% else %}<p>Nenhuma publicação ainda.</p>{% endif %}
-    <h2>Tags dos Posts:</h2>
-    {% assign sorted_tags = site.tags | sort %}
-    {% if sorted_tags.size > 0 %}
-    <ul class="post-categories">
-      {% for tag in sorted_tags %}
-      <li><a href="{{ '/tags/' | relative_url }}#{{ tag[0] | slugify }}">{{ tag[0] | escape }}</a> ({{ tag[1].size }})</li>
-      {% endfor %}
-    </ul>
-    <p><a href="{{ '/tags/' | relative_url }}">Ver todas as tags →</a></p>
-    {% else %}<p>As tags aparecerão aqui quando houver publicações.</p>{% endif %}
+    <section class="home-intro" aria-label="Apresentação">
+      <p>Você encontrou o cantinho de Gean Ramos na internet. Um espaço pessoal para compartilhar tecnologia, ideias, projetos e experiências.</p>
+      <blockquote class="home-quote">
+        <p>Um espaço para minha citação pessoal. Em breve, minhas próprias palavras estarão aqui.</p>
+      </blockquote>
+    </section>
+    <section aria-label="Últimas publicações">
+      <h2 class="home-section-title">Latest Posts:</h2>
+      {% if site.posts.size > 0 %}
+      <ul class="home-posts">
+        {% for post in site.posts limit:12 %}
+        <li>
+          <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%d %b' }}</time>
+          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      <p class="home-secondary-link"><a href="{{ '/arquivo/' | relative_url }}">Ver todas as publicações →</a></p>
+      {% else %}
+      <p>Nenhuma publicação ainda.</p>
+      {% endif %}
+    </section>
+    <section aria-label="Tags">
+      <h2 class="home-section-title">Tags dos Posts:</h2>
+      {% assign sorted_tags = site.tags | sort %}
+      {% if sorted_tags.size > 0 %}
+      <ul class="post-categories">
+        {% for tag in sorted_tags %}
+        <li><a href="{{ '/tags/' | relative_url }}#{{ tag[0] | slugify }}">{{ tag[0] | escape }}</a> ({{ tag[1].size }})</li>
+        {% endfor %}
+      </ul>
+      <p class="home-secondary-link"><a href="{{ '/tags/' | relative_url }}">Ver todas as tags →</a></p>
+      {% else %}
+      <p>As tags aparecerão aqui quando houver publicações.</p>
+      {% endif %}
+    </section>
   </div>
 </div>
