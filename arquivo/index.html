@@ -1,6 +1,20 @@
 ---
-layout: page
+layout: default
 title: Arquivo
 permalink: /arquivo/
 ---
-<ul>{% for post in site.posts %}<li><time>{{ post.date | date: '%d/%m/%Y' }}</time> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}</ul>
+<ul class="t-list-of-posts site-list-of-posts h-feed">
+{% assign archive_year = '' %}
+{% for post in site.posts %}
+  {% assign this_year = post.date | date: '%Y' %}
+  {% if this_year != archive_year %}
+  <li class="post-list-year-h2">{{ this_year }}</li>
+  {% assign archive_year = this_year %}
+  {% endif %}
+  <li class="h-entry">
+    <time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %b' }}</time>
+    <span class="t-post post-link"><a class="p-name u-url" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></span>
+  </li>
+{% endfor %}
+</ul>
+{% include email-subscribe.html %}
