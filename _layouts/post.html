@@ -7,4 +7,6 @@ layout: default
 <footer class="site-meta">
 {% if page.tags.size > 0 %}<div class="site-tags">{% for tag in page.tags %}<a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a> {% endfor %}</div>{% endif %}
 <div class="published-at"><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d/%m/%Y' }}</time></div>
-</footer></article>
+</footer>
+{% include email-subscribe.html %}
+</article>
