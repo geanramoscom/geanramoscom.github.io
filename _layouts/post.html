@@ -2,11 +2,18 @@
 layout: default
 ---
 <article class="site-post h-entry zoomable">
-<header class="site-post-header"><h1 class="p-name">{{ page.title | escape }}</h1></header>
-<div class="trix-content e-content">{{ content }}</div>
-<footer class="site-meta">
-{% if page.tags.size > 0 %}<div class="site-tags">{% for tag in page.tags %}<a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a> {% endfor %}</div>{% endif %}
-<div class="published-at"><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d/%m/%Y' }}</time></div>
-</footer>
-{% include email-subscribe.html %}
+  <header class="site-post-header"><h1 class="p-name">{{ page.title | escape }}</h1></header>
+  <div class="trix-content e-content">{{ content }}</div>
+  <footer class="site-meta">
+    {% if page.tags.size > 0 %}<div class="site-tags">{% for tag in page.tags %}<a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag | escape }}</a> {% endfor %}</div>{% endif %}
+    <div class="published-at"><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %b, %Y' }}</time></div>
+  </footer>
 </article>
+{% if page.previous or page.next %}
+<hr class="site-hr-above-previous-next-post-navigation">
+<div class="site-previous-next-post-navigation">
+  <div class="site-link-previous-post">{% if page.previous %}<small>← Anterior</small><a href="{{ page.previous.url | relative_url }}">{{ page.previous.title | escape }}</a>{% endif %}</div>
+  <div class="site-link-next-post">{% if page.next %}<small>Próximo →</small><a href="{{ page.next.url | relative_url }}">{{ page.next.title | escape }}</a>{% endif %}</div>
+</div>
+{% endif %}
+{% include email-subscribe.html %}
