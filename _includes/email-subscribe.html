@@ -3,15 +3,43 @@
   <div><small><div class="trix-content">
     <p>Receba as novas publicações diretamente no seu e-mail. Ou <a href="{{ '/feed.xml' | relative_url }}">acompanhe pelo RSS</a>.</p>
   </div></small></div>
+  <style>
+    .site-email-subscribe .listmonk-form .newsletter-form-inputs {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      gap: .5rem;
+      width: 100%;
+      max-width: 440px;
+      margin: .5rem 0;
+    }
+    .site-email-subscribe .listmonk-form .newsletter-form-inputs input[type="email"] {
+      flex: 1 1 auto;
+      min-width: 0;
+      width: auto;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .site-email-subscribe .listmonk-form .newsletter-form-inputs button[type="submit"] {
+      flex: 0 0 auto;
+      width: auto;
+      margin: 0;
+      white-space: nowrap;
+    }
+    @media (max-width: 340px) {
+      .site-email-subscribe .listmonk-form .newsletter-form-inputs { gap: .25rem; }
+      .site-email-subscribe .listmonk-form .newsletter-form-inputs button[type="submit"] { padding-inline: .5rem; }
+    }
+  </style>
   <div id="newsletter-form">
     <form method="post" action="https://app.thestories.cc/subscription/form" class="listmonk-form">
       <h3>Inscrever-se</h3>
       <input type="hidden" name="nonce">
       <div class="newsletter-form-inputs my-XS">
         <input type="email" name="email" id="newsletter_subscriber_email" required placeholder="E-mail" autocomplete="email" class="input input-S">
+        <button type="submit" class="button button-S">Inscrever-se</button>
       </div>
       <input type="hidden" name="l" value="03c3462d-f06b-42ec-a5ee-0e2335ce5091">
-      <button type="submit" class="button button-S">Inscrever-se</button>
     </form>
   </div>
 </aside>
