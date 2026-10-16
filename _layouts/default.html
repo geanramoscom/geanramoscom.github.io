@@ -25,6 +25,27 @@
   <meta name="twitter:description" content="{{ social_description | escape }}">
   <meta name="twitter:image" content="{{ social_image }}">
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": {% if page.layout == 'post' %}"BlogPosting"{% else %}"WebPage"{% endif %},
+    "headline": {{ page.title | default: site.title | jsonify }},
+    "description": {{ page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | jsonify }},
+    "inLanguage": "pt-BR",
+    "url": {{ page.url | absolute_url | jsonify }},
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": {{ site.title | jsonify }},
+      "url": {{ '/' | absolute_url | jsonify }}
+    }{% if page.layout == 'post' %},
+    "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+    "author": {
+      "@type": "Person",
+      "name": "Gean Ramos"
+    }{% if page.image %},
+    "image": {{ page.image | absolute_url | jsonify }}{% endif %}{% endif %}
+  }
+  </script>
   <link rel="alternate" type="application/atom+xml" title="Gean Ramos" href="{{ site.baseurl }}/feed.xml">
   <link rel="stylesheet" href="https://darren.me/assets/application-d00ebc738d0848a258968ae3cdc1e5535d02651fd7f1cd39d9699239c8db430d.css" data-turbo-track="reload">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.9/dist/katex.min.css" crossorigin="anonymous">
