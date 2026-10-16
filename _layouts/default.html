@@ -3,16 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>{{ page.title | default: site.title | escape }}</title>
-  <meta name="color-scheme" content="light dark">
-  <link rel="icon" href="{{ site.logo_url | default: '/img/logo.png' }}" type="image/png">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.logo_url | default: '/img/logo.png' }}">
-  <meta name="title" content="Gean Ramos">
-  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  
   {% assign social_title = page.title | default: site.title %}
   {% assign social_description = page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 200 %}
   {% assign social_image = page.image | default: site.social_image | default: site.logo_url | absolute_url %}
+  {% assign author_name = site.author.name | default: 'Gean Ramos' %}
+
+  <title>{{ social_title | escape }}</title>
+  <meta name="title" content="{{ social_title | escape }}">
+  <meta name="description" content="{{ social_description | escape }}">
+  <meta name="author" content="{{ author_name }}">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="rgb(253, 247, 237)">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="rgb(33, 19, 8)">
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/style.css" data-turbo-track="reload">
+  <link rel="icon" href="{{ site.logo_url | default: '/img/logo.png' | absolute_url }}" type="image/png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.logo_url | default: '/img/logo.png' | absolute_url }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <!-- Open Graph -->
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
   <meta property="og:site_name" content="{{ site.title | escape }}">
@@ -20,17 +30,23 @@
   <meta property="og:description" content="{{ social_description | escape }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:image" content="{{ social_image }}">
+
+  <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
+  <!-- Substitua @seu_usuario pelo seu arroba no X/Twitter se desejar, ou use uma variável do _config.yml -->
+  <meta name="twitter:site" content="{{ site.twitter_username | prepend: '@' | default: '@geanramos' }}">
+  <meta name="twitter:creator" content="{{ site.twitter_username | prepend: '@' | default: '@geanramos' }}">
   <meta name="twitter:title" content="{{ social_title | escape }}">
   <meta name="twitter:description" content="{{ social_description | escape }}">
   <meta name="twitter:image" content="{{ social_image }}">
 
+  <!-- Schema.org / JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": {% if page.layout == 'post' %}"BlogPosting"{% else %}"WebPage"{% endif %},
-    "headline": {{ page.title | default: site.title | jsonify }},
-    "description": {{ page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | jsonify }},
+    "headline": {{ social_title | jsonify }},
+    "description": {{ social_description | jsonify }},
     "inLanguage": "pt-BR",
     "url": {{ page.url | absolute_url | jsonify }},
     "isPartOf": {
@@ -39,33 +55,55 @@
       "url": {{ '/' | absolute_url | jsonify }}
     }{% if page.layout == 'post' %},
     "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+    "dateModified": {{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},
     "author": {
       "@type": "Person",
-      "name": "Gean Ramos"
+      "name": "{{ author_name }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": {{ site.title | jsonify }},
+      "logo": {
+        "@type": "ImageObject",
+        "url": {{ site.logo_url | default: '/img/logo.png' | absolute_url | jsonify }}
+      }
     }{% if page.image %},
     "image": {{ page.image | absolute_url | jsonify }}{% endif %}{% endif %}
   }
   </script>
-  <link rel="alternate" type="application/atom+xml" title="Gean Ramos" href="{{ site.baseurl }}/feed.xml">
-  <link rel="stylesheet" href="https://darren.me/assets/application-d00ebc738d0848a258968ae3cdc1e5535d02651fd7f1cd39d9699239c8db430d.css" data-turbo-track="reload">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@100..900&amp;family=Roboto:wght@100..900&amp;display=swap">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="rgb(253, 247, 237)">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="rgb(33, 19, 8)">
-
+  
+  <link rel="sitemap" type="application/xml" title="Sitemap - {{ site.title | default: 'Gean Ramos' }}" href="{{ '/sitemap.xml' | absolute_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | default: 'Gean Ramos' }} - RSS" href="{{ '/feed.xml' | absolute_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | default: 'Gean Ramos' }} - FeedBurner" href="https://feeds.feedburner.com/geanramos">
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@100..900&amp;family=Roboto:wght@100..900&amp;display=swap">
+  <!-- Estilos In-line (Recomendado mover para o style.css para melhorar cache e Pagespeed) -->
   <style>
-    html, body, body *:not(code):not(pre):not(kbd):not(samp) {
-      font-family: 'Google Sans Flex', 'Roboto', Arial, sans-serif !important;
-    }
-    .trix-content img { border-radius: 8px; }
-    a, a:hover, a:focus, a:visited { text-decoration: none !important; }
-    .site-nav #search-toggle { color: inherit; }
-    .site-nav #search-toggle span, .site-nav #search-toggle svg { color: inherit; }
-  </style>
-  <!-- external script omitted from static archive -->
-    <style>
-      #footer88x31 {
+  html,
+  body,
+  body *:not(code):not(pre):not(kbd):not(samp) {
+    font-family: "Google Sans Flex", "Roboto", Arial, sans-serif !important;
+  }
+  .trix-content img {
+    border-radius: 8px;
+  }
+  a,
+  a:hover,
+  a:focus,
+  a:visited {
+    text-decoration: none !important;
+  }
+  .site-nav #search-toggle {
+    color: inherit;
+  }
+  .site-nav #search-toggle span,
+  .site-nav #search-toggle svg {
+    color: inherit;
+  }
+
+  #footer88x31 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -73,8 +111,8 @@
     gap: 8px;
     flex-wrap: nowrap;
     margin: 2rem 0;
-}
-    </style>
+  }
+  </style>
 </head>
 {% if page.layout == "post" %}{% include header-post.html %}{% else %}{% include header-home.html %}{% endif %}
 <main id="main" class="site-main">{{ content }}</main>
