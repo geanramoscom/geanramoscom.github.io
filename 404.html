@@ -1,11 +1,13 @@
 ---
+title: "Ops!"
 ---
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <title>404: Page not found</title>
+    {% assign seo_title = page.title | default: site.title %} {% if seo_title == site.title %} {% assign full_title = site.title %} {% else %} {% capture full_title %}{{ seo_title }} - {{ site.title }}{% endcapture %} {% endif %} {% assign seo_description = page.description | default: site.description | strip_html | strip_newlines | truncate: 160 %} {% assign seo_image = page.image | default: page.img | default: site.img %} {% assign seo_author = page.author | default: site.author | default: site.title %}
+    <title>{{ full_title | strip | escape }}</title>
     <meta name="color-scheme" content="light dark">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff">
     <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000">
