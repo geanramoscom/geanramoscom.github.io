@@ -1,6 +1,7 @@
 title: "Gean Ramos"
 description: "Blog pessoal de Gean Ramos"
 url: "https://geanramos.com"
+img: "https://geanramos.com/img/logo.png"
 baseurl: ""
 lang: pt-BR
 timezone: America/Belem
@@ -20,10 +21,10 @@ exclude:
 
 # Troque por "/img/logo.png" quando o dominio geanramos.com estiver ativo.
 logo_url: "https://geanramos.com/img/logo.png"
-support_url: "#pix"
+support_url: "https://deflow.exchange/pt/qr/qrcode"
 
 # Inscricoes: preencha com a URL real do formulario do provedor de newsletter.
 newsletter_form_action: ""
 newsletter_email_field: "email"
 # Link opcional de apoio, sem redirecionar para o criador do template.
-support_url: ""
+support_url: "https://deflow.exchange/pt/qr/qrcode"
