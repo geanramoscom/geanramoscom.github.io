@@ -9,9 +9,11 @@
   {% assign social_image = page.image | default: site.social_image | default: site.logo_url | absolute_url %}
   {% assign author_name = site.author.name | default: 'Gean Ramos' %}
 
-  <title>{{ social_title | escape }}</title>
-  <meta name="title" content="{{ social_title | escape }}">
-  <meta name="description" content="{{ social_description | escape }}">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %} - {{ site.title }}</title>
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %} - {{ site.title }}">
+  <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta name="author" content="{{ author_name }}">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="rgb(253, 247, 237)">
@@ -26,18 +28,18 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
   <meta property="og:site_name" content="{{ site.title | escape }}">
-  <meta property="og:title" content="{{ social_title | escape }}">
-  <meta property="og:description" content="{{ social_description | escape }}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %} - {{ site.title }}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   {% if page.image %} <meta property="og:image" content="{{ page.img | absolute_url }}"> {% else %} <meta property="og:image" content="{{ site.img | absolute_url }}"> {% endif %}
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <!-- Substitua @seu_usuario pelo seu arroba no X/Twitter se desejar, ou use uma variável do _config.yml -->
-  <meta name="twitter:site" content="{{ site.twitter_username | prepend: 'geanramos' | default: '@geanramos' }}">
-  <meta name="twitter:creator" content="{{ site.twitter_username | prepend: 'geanramos' | default: '@geanramos' }}">
-  <meta name="twitter:title" content="{{ social_title | escape }}">
-  <meta name="twitter:description" content="{{ social_description | escape }}">
+  <meta name="twitter:site" content="{{ site.twitter_username | prepend: '@geanramos' | default: '@geanramos' }}">
+  <meta name="twitter:creator" content="{{ site.twitter_username | prepend: '@geanramos' | default: '@geanramos' }}">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %} - {{ site.title }}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   {% if page.image %} <meta name="twitter:image" content="{{ page.img | absolute_url }}"> {% else %} <meta name="twitter:image" content="{{ site.img | absolute_url }}"> {% endif %}
 
   <!-- Schema.org / JSON-LD -->
@@ -45,13 +47,13 @@
   {
     "@context": "https://schema.org",
     "@type": {% if page.layout == 'post' %}"BlogPosting"{% else %}"WebPage"{% endif %},
-    "headline": {{ social_title | jsonify }},
-    "description": {{ social_description | jsonify }},
+    "headline": {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %} - {{ site.title }},
+    "description": {% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %},
     "inLanguage": "pt-BR",
     "url": {{ page.url | absolute_url | jsonify }},
     "isPartOf": {
       "@type": "WebSite",
-      "name": {{ site.title | jsonify }},
+      "name": {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %} - {{ site.title }},
       "url": {{ '/' | absolute_url | jsonify }}
     }{% if page.layout == 'post' %},
     "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
@@ -65,10 +67,10 @@
       "name": {{ site.title | jsonify }},
       "logo": {
         "@type": "ImageObject",
-        "url": {{ site.logo_url | default: '/img/logo.png' | absolute_url | jsonify }}
+        "url": {% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.image | absolute_url }}{% endif %}
       }
     }{% if page.image %},
-    "image": {{ page.image | absolute_url | jsonify }}{% endif %}{% endif %}
+    "image": {{ site.img | absolute_url }}{% endif %}{% endif %}
   }
   </script>
   
