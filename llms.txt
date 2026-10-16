@@ -1,0 +1,18 @@
+---
+layout: null
+permalink: /llms.txt
+---
+# Gean Ramos
+
+> Blog pessoal de Gean Ramos sobre tecnologia, projetos e ideias, em português do Brasil.
+
+## Navegação
+- [Início](https://geanramos.com/)
+- [Arquivo](https://geanramos.com/arquivo/)
+- [Tags](https://geanramos.com/tags/)
+- [RSS](https://geanramos.com/feed.xml)
+
+## Artigos recentes
+{% for post in site.posts limit:30 %}
+- [{{ post.title | strip_newlines }}]({{ post.url | absolute_url }})
+{% endfor %}
