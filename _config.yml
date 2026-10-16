@@ -1,30 +1,33 @@
+# Identidade do blog
 title: "Gean Ramos"
 description: "Blog pessoal de Gean Ramos"
-url: "https://geanramos.com"
-img: "https://geanramos.com/img/logo.png"
-baseurl: ""
+author: "Gean Ramos"
 lang: pt-BR
 timezone: America/Belem
+
+# Domínio e endereços
+url: "https://geanramos.com"
+baseurl: ""
 permalink: /p/:title.html
+
+# Imagens e redes sociais
+logo_url: "https://geanramos.com/img/logo.png"
+img: "https://geanramos.com/img/logo.png"
+twitter_username: "geanramos"
+
+# Apoio ao conteúdo
+support_url: "https://deflow.exchange/pt/qr/qrcode"
+
+# Geração do site (GitHub Pages / Jekyll)
 markdown: kramdown
-include:
-  - _assets
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+
+# Arquivos que não devem ser publicados
 exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
   - .github
   - COPYING-NOTE.md
-
-# Troque por "/img/logo.png" quando o dominio geanramos.com estiver ativo.
-logo_url: "https://geanramos.com/img/logo.png"
-support_url: "https://deflow.exchange/pt/qr/qrcode"
-
-# Inscricoes: preencha com a URL real do formulario do provedor de newsletter.
-newsletter_form_action: ""
-newsletter_email_field: "email"
-# Link opcional de apoio, sem redirecionar para o criador do template.
-support_url: "https://deflow.exchange/pt/qr/qrcode"
