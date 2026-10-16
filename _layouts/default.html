@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR" dir="auto">
 <head>
+<script>
+  try { document.documentElement.dataset.theme = localStorage.getItem('gean-theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); }
+  catch (e) { document.documentElement.dataset.theme = 'dark'; }
+</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>{{ page.title | default: site.title | escape }}</title>
@@ -55,6 +59,15 @@
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="rgb(33, 19, 8)">
 
   <style>
+    html[data-theme="light"] { color-scheme: light; }
+    html[data-theme="dark"] { color-scheme: dark; }
+    html[data-theme="light"] body { background: #fdf7ed !important; color: #211308 !important; }
+    html[data-theme="dark"] body { background: #211308 !important; color: #f5ebd8 !important; }
+    html[data-theme="light"] body a, html[data-theme="light"] .site-nav button { color: #805800; }
+    html[data-theme="dark"] body a, html[data-theme="dark"] .site-nav button { color: #f0c45c; }
+    #theme-toggle { border: 0; padding: 0; background: none; font: inherit; cursor: pointer; display: inline-flex; align-items: center; }
+    #theme-toggle .theme-sun, #theme-toggle .theme-moon { font-size: 19px; line-height: 1; }
+    html[data-theme="dark"] #theme-toggle .theme-moon, html[data-theme="light"] #theme-toggle .theme-sun { display: none; }
     .trix-content img { border-radius: 8px; }
     a, a:hover, a:focus, a:visited { text-decoration: none !important; }
     .site-nav #search-toggle { color: inherit; }
@@ -72,6 +85,7 @@
     margin: 2rem 0;
 }
     </style>
+  <script defer src="{{ '/assets/theme.js' | relative_url }}"></script>
 </head>
 {% if page.layout == "post" %}{% include header-post.html %}{% else %}{% include header-home.html %}{% endif %}
 <main id="main" class="site-main">{{ content }}</main>
