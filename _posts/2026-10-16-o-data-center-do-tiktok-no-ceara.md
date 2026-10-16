@@ -7,8 +7,6 @@ date: 2026-10-16 15:00:00 -0300
 tags: [IA, tecnologia]
 ---
 
-# O maior data center em construção no Brasil fica no Ceará. Mas quem fica com a conta?
-
 Amiga, senta aqui porque essa história envolve inteligência artificial, dinheiro público, energia suficiente para abastecer uma cidade, água subterrânea, 120 geradores a diesel e uma comunidade indígena que, segundo o Ministério Público Federal e a Defensoria Pública da União, ainda precisa ser consultada.
 
 Enquanto moradores de regiões dos Estados Unidos reclamam que a expansão dos data centers pressiona a rede elétrica e pode encarecer as contas, o Brasil tenta se vender como o novo endereço ideal para esse tipo de empreendimento.
