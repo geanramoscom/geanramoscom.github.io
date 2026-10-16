@@ -13,6 +13,6 @@ permalink: /llms.txt
 - [RSS](https://geanramos.com/feed.xml)
 
 ## Artigos recentes
-{% for post in site.posts limit:30 %}
+{% for post in site.posts limit:100 %}
 - [{{ post.title | strip_newlines }}]({{ post.url | absolute_url }})
 {% endfor %}
