@@ -9,6 +9,22 @@
   <link rel="apple-touch-icon" sizes="180x180" href="{{ site.logo_url | default: '/img/logo.png' }}">
   <meta name="title" content="Gean Ramos">
   <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  {% assign social_title = page.title | default: site.title %}
+  {% assign social_description = page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 200 %}
+  {% assign social_image = page.image | default: site.social_image | default: site.logo_url | absolute_url %}
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  <meta property="og:title" content="{{ social_title | escape }}">
+  <meta property="og:description" content="{{ social_description | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ social_image }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ social_title | escape }}">
+  <meta name="twitter:description" content="{{ social_description | escape }}">
+  <meta name="twitter:image" content="{{ social_image }}">
+
   <link rel="alternate" type="application/atom+xml" title="Gean Ramos" href="{{ site.baseurl }}/feed.xml">
   <link rel="stylesheet" href="https://darren.me/assets/application-d00ebc738d0848a258968ae3cdc1e5535d02651fd7f1cd39d9699239c8db430d.css" data-turbo-track="reload">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.9/dist/katex.min.css" crossorigin="anonymous">
