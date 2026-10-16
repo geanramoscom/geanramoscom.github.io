@@ -29,7 +29,7 @@
   <meta property="og:title" content="{{ social_title | escape }}">
   <meta property="og:description" content="{{ social_description | escape }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="{{ social_image }}">
+  {% if page.image %} <meta property="og:image" content="{{ page.img | absolute_url }}"> {% else %} <meta property="og:image" content="{{ site.img | absolute_url }}"> {% endif %}
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
@@ -38,7 +38,7 @@
   <meta name="twitter:creator" content="{{ site.twitter_username | prepend: 'geanramos' | default: '@geanramos' }}">
   <meta name="twitter:title" content="{{ social_title | escape }}">
   <meta name="twitter:description" content="{{ social_description | escape }}">
-  <meta name="twitter:image" content="{{ social_image }}">
+  {% if page.image %} <meta name="twitter:image" content="{{ page.img | absolute_url }}"> {% else %} <meta name="twitter:image" content="{{ site.img | absolute_url }}"> {% endif %}
 
   <!-- Schema.org / JSON-LD -->
   <script type="application/ld+json">
@@ -78,7 +78,7 @@
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@100..900&amp;family=Roboto:wght@100..900&amp;display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <!-- Estilos In-line (Recomendado mover para o style.css para melhorar cache e Pagespeed) -->
   <style>
   html,
