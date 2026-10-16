@@ -11,9 +11,9 @@ title: "Ops!"
     <meta name="color-scheme" content="light dark">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff">
     <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000">
-    <link rel="icon" href="{{ site.baseurl }}/favicon.ico" sizes="any">
-    <link rel="icon" href="{{ site.baseurl }}/favicon.png" type="image/png">
-    <script defer data-domain="{{ site.baseurl }}" src="https://plausible.io/js/script.outbound-links.js"></script>
+    <link rel="icon" href="{{ '/favicon.ico' | absolute_url }}" sizes="any">
+    <link rel="icon" href="{{ '/favicon.png' | absolute_url }}" type="image/png">
+    <script defer data-domain="{{ '/' | absolute_url }}" src="https://plausible.io/js/script.outbound-links.js"></script>
     <style>
       * {
         box-sizing: border-box;
@@ -85,16 +85,16 @@ title: "Ops!"
 
   <body>
     <main>
-      <img src="{{ site.baseurl }}/img/erro-404.png" aria-hidden="true" width="80" height="87" alt="Constrangedor!">
+      <img src="{{ '/' | absolute_url }}img/erro-404.png" aria-hidden="true" width="80" height="87" alt="Constrangedor!">
       <h1>
         Bem, isso é constrangedor…
       </h1>
       <p>
-        Desculpe, não conseguimos encontrar a página que você estava procurando no {{ seo_author | jsonify }}. Verifique o URL novamente</a>.
+        Desculpe, não conseguimos encontrar a página que você estava procurando no {{ '/' | absolute_url }}. Verifique o URL novamente</a>.
       </p>
       <p>
         <a class="button" href="javascript:window.history.back();">&larr; Voltar</a>
-        <a class="button" href="{{ site.baseurl }}/">Home &rarr;</a>
+        <a class="button" href="{{ '/' | absolute_url }}">Home &rarr;</a>
       </p>
     </main>
   </body>
