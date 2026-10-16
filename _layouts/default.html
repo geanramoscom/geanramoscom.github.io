@@ -3,12 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  
-  {% assign social_title = page.title | default: site.title %}
-  {% assign social_description = page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 200 %}
-  {% assign social_image = page.image | default: site.social_image | default: site.logo_url | absolute_url %}
-  {% assign author_name = site.author.name | default: 'Gean Ramos' %}
-
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %} - {{ site.title }}</title>
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
@@ -23,7 +17,6 @@
   <link rel="icon" href="{{ site.logo_url | default: '/img/logo.png' | absolute_url }}" type="image/png">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ site.logo_url | default: '/img/logo.png' | absolute_url }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
-
   <!-- Open Graph -->
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
@@ -31,8 +24,7 @@
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %} - {{ site.title }}">
   <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-  {% if page.image %} <meta property="og:image" content="{{ page.img | absolute_url }}"> {% else %} <meta property="og:image" content="{{ site.img | absolute_url }}"> {% endif %}
-
+  {% if page.image %}<meta property="og:image" content="{{ page.img | absolute_url }}">{% else %}<meta property="og:image" content="{{ site.img | absolute_url }}"> {% endif %}
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <!-- Substitua @seu_usuario pelo seu arroba no X/Twitter se desejar, ou use uma variável do _config.yml -->
@@ -41,7 +33,6 @@
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %} - {{ site.title }}">
   <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   {% if page.image %} <meta name="twitter:image" content="{{ page.img | absolute_url }}"> {% else %} <meta name="twitter:image" content="{{ site.img | absolute_url }}"> {% endif %}
-
   <!-- Schema.org / JSON-LD -->
   <script type="application/ld+json">
   {
