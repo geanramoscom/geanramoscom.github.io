@@ -5,7 +5,7 @@
   <div class="post-share-links">
     <a href="https://api.whatsapp.com/send?text={{ share_title | append: ' ' | append: share_url | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar pelo WhatsApp">WhatsApp</a>
     <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no Facebook">Facebook</a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no LinkedIn">LinkedIn</a>
+    <a href="https://t.me/share/url?url={{ share_url | url_encode }}&text={{ share_title | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no Telegram">Telegram</a>
     <button class="post-share-copy" type="button" data-share-url="{{ share_url | escape }}">Copiar link</button>
   </div>
   <span class="post-share-feedback" role="status" aria-live="polite"></span>
