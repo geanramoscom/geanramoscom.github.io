@@ -112,7 +112,7 @@ bundle exec jekyll build
 ### Imagens e legendas
 
 <figure class="showcase-figure">
-  <img src="/img/logo.png" width="280" height="280" loading="lazy" alt="Logotipo ilustrado do blog Gean Ramos">
+  <img src="[/img/logo.png](https://get.pxhere.com/photo/code-code-editor-coding-computer-data-developing-development-ethernet-html-programmer-programming-screen-software-technology-work-1366450.jpg)" width="100%"  loading="lazy" alt="Logotipo ilustrado do blog Gean Ramos">
   <figcaption>Imagem do próprio repositório, com legenda e texto alternativo.</figcaption>
 </figure>
 
