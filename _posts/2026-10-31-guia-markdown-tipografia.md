@@ -111,15 +111,37 @@ bundle exec jekyll build
 
 ### Imagens e legendas
 
+
 <figure class="showcase-figure">
-  ![Shibuya, Japan](https://images.unsplash.com/photo-1542052125323-e69ad37a47c2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA=)
-  <figcaption>Foto: [Jezael Melgoza](https://unsplash.com/pt-br/@jezar)</figcaption>
+  <img
+    src="https://images.unsplash.com/photo-1542052125323-e69ad37a47c2?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=NHwxMjA3fDA="
+    alt="Paisagem urbana de Shibuya, Japão"
+    width="1470"
+    loading="lazy"
+    decoding="async"
+  >
+  <figcaption>
+    Shibuya, Japão. Foto:
+    <a href="https://unsplash.com/pt-br/@jezar"
+       target="_blank"
+       rel="noopener noreferrer">Jezael Melgoza</a>,
+    via Unsplash.
+  </figcaption>
 </figure>
 
 <div class="showcase-gallery">
-  <figure><img src="/img/logo.png" width="280" height="280" loading="lazy" alt="Logotipo do blog, primeira imagem"><figcaption>Primeira imagem</figcaption></figure>
-  <figure><img src="/img/erro-404.png" width="80" height="87" loading="lazy" alt="Ilustração da página de erro 404"><figcaption>Segunda imagem</figcaption></figure>
+  <figure>
+    <img src="/img/logo.png" width="280" height="280"
+         loading="lazy" alt="Logotipo do blog">
+    <figcaption>Primeira imagem</figcaption>
+  </figure>
+  <figure>
+    <img src="/img/erro-404.png" width="80" height="87"
+         loading="lazy" alt="Ilustração da página 404">
+    <figcaption>Segunda imagem</figcaption>
+  </figure>
 </div>
+
 
 ### Fórmulas matemáticas com KaTeX
 
