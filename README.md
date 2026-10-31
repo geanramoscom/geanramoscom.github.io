@@ -1,14 +1,22 @@
-# Gean Ramos: tema Jekyll estilo Darren.me
+# GeanRamos V2
 
-Tema gerado a partir da análise do clone estático local, com a folha de estilos e fontes do snapshot, mas conteúdo demonstrativo próprio.
+Reconstrução independente com Jekyll e aparência editorial inspirada na família Pika.page. Temas claro, escuro e marrom, Google Sans Flex e Tailwind CSS v4 compilado.
 
-## GitHub Pages
-1. Subir os arquivos deste diretório para a branch `main` de um repositório.
-2. Settings > Pages > Build and deployment > GitHub Actions.
-3. Criar o apontamento DNS de `geanramos.com` para o GitHub Pages e configurar o domínio customizado.
-4. Criar novos Markdown em `_posts/YYYY-MM-DD-slug.md`.
+## Preservação
+Mantidos sem alteração: `_posts/`, `img/`, `404.html`, `llms.txt`. URLs dos artigos: `/p/:title.html`. O domínio usa `CNAME`.
 
-`_layouts/default.html` reutiliza o shell visual original; `_layouts/post.html` e `_layouts/page.html` criam páginas novas com as classes CSS do tema. As páginas antigas do clone não foram copiadas para este projeto e a fidelidade pixel a pixel ainda requer comparação de renderizações no GitHub Pages. Ruby não foi instalado na VPS.
+## Desenvolvimento
+- `npm install`
+- `npm run css:build`
+- `bundle install`
+- `bundle exec jekyll serve`
 
-## Direitos
-Os assets do snapshot precisam de revisão de licença e substituição de imagens de terceiros antes de uma publicação pública definitiva.
+A folha `assets/css/site.css` deve ser gerada pelo build antes de servir. Não publicar a branch V2 como produção sem build e validação. O conteúdo de `404.html` foi mantido literalmente nesta primeira etapa; a integração estética fica para a revisão final.
+
+## Arquitetura
+`_includes/head.html`, `header.html`, `theme-picker.html`, `footer.html`, `post-list.html`; `_layouts/default.html`, `home.html`, `archive.html`, `page.html`, `post.html`.
+
+A página de contato está em rascunho: não existe formulário sem endpoint autorizado. Publicação, newsletter e recursos removidos do site antigo não foram reativados automaticamente.
+
+## Status
+Primeira versão de código na branch de trabalho; não publicada e ainda sem testes de build concluídos.

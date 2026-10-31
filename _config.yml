@@ -1,34 +1,22 @@
-# Identidade do blog
 title: "Gean Ramos"
-description: "Tecnologia, inteligência artificial, empreendedorismo e ideias que saem do papel. Experiências, descobertas e reflexões de Gean Ramos."
+description: "Tecnologia, inteligência artificial, empreendedorismo e ideias que saem do papel."
 author: "Gean Ramos"
 lang: pt-BR
 timezone: America/Belem
-
-# Domínio e endereços
 url: "https://geanramos.com"
 baseurl: ""
 permalink: /p/:title.html
-
-# Imagens e redes sociais
-logo_url: "https://geanramos.com/img/logo.png"
-img: "https://geanramos.com/img/logo.png"
-twitter_username: "geanramos"
-
-# Apoio ao conteúdo
-support_url: "https://deflow.exchange/pt/qr/qrcode"
-citacao: "A vida não precisa estar resolvida para ser vivida."
-
-# Geração do site (GitHub Pages / Jekyll)
-markdown: kramdown
+logo_url: "/img/logo.png"
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-
-# Arquivos que não devem ser publicados
+markdown: kramdown
 exclude:
   - README.md
+  - package.json
+  - package-lock.json
+  - node_modules
   - Gemfile
   - Gemfile.lock
+  - assets/css/input.css
   - .github
-  - COPYING-NOTE.md

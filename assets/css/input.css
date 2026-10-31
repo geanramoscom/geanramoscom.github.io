@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@source "../../_layouts";
+@source "../../_includes";
+@source "../../*.html";
+@source "../../arquivo";
+@source "../../sobre";
+@source "../../contato";
+@import "./theme.css";

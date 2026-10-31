@@ -1,0 +1,8 @@
+- label: Início
+  url: /
+- label: Arquivo
+  url: /arquivo/
+- label: Sobre
+  url: /sobre/
+- label: Contato
+  url: /contato/

@@ -1,32 +1,5 @@
 ---
-layout: default
+layout: home
 title: Gean Ramos
 permalink: /
 ---
-<div class="site-page zoomable">
-  <header class="site-page-header"><h1>Bem-vindos</h1></header>
-  <div class="trix-content e-content">
-    <p>Você chegou ao espaço de <strong>Gean Ramos</strong>, onde compartilho tecnologia, projetos, ideias e um pouco da vida fora das telas.</p>
-    <blockquote><p style="text-align:center;">“<em>{{ site.citacao | default: 'Minha citação pessoal em breve.' | escape }}</em>”</p></blockquote>
-    <p><strong>Últimas publicações:</strong></p>
-    {% if site.posts.size > 0 %}
-    <ul class="t-list-of-posts site-list-of-posts">
-      {% for post in site.posts limit:5 %}
-      <li class="h-entry">
-        <time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %b' }}</time>
-        <span class="t-post post-link"><a class="p-name u-url" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></span>
-      </li>
-      {% endfor %}
-    </ul>
-    {% else %}<p>Nenhuma publicação ainda.</p>{% endif %}
-    <p>Tags:
-      {% assign sorted_tags = site.tags | sort %}
-      {% if sorted_tags.size > 0 %}
-      <span class="site-tags-with-separator">
-        {% for tag in sorted_tags %}<a href="{{ '/tags/' | relative_url }}#{{ tag[0] | slugify }}">{{ tag[0] | escape }}</a>{% unless forloop.last %} | {% endunless %}{% endfor %}
-      </span>
-      {% else %}<span>As categorias aparecerão após a primeira publicação.</span>{% endif %}
-    </p>
-    <blockquote class="support-coffee" id="pix"><p style="text-align:center;">☕ Se você gosta do que compartilho por aqui e quiser apoiar o blog, que tal <a href="#pix-chave">me pagar um café</a>?</p><p id="pix-chave" style="text-align:center;"><strong>Chave Pix:</strong> <code>pix@gean.me</code> <button type="button" onclick="navigator.clipboard.writeText('pix@gean.me').then(() => { this.textContent = 'Copiado!'; }).catch(() => { this.textContent = 'Selecione a chave acima'; })">Copiar chave</button></p></blockquote>
-  </div>
-</div>

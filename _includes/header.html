@@ -1,0 +1,13 @@
+<a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+<header class="site-header">
+  <a href="{{ '/' | relative_url }}" class="avatar-link" aria-label="Página inicial"><img src="{{ '/img/logo.png' | relative_url }}" alt="" width="72" height="72"></a>
+  <div class="identity">
+    <a href="{{ '/' | relative_url }}" class="site-name">{{ site.title }}</a>
+    <nav class="site-nav" aria-label="Navegação principal">
+      {% for item in site.data.navigation %}<a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}
+      <a href="{{ '/feed.xml' | relative_url }}" aria-label="Feed RSS">RSS</a>
+    </nav>
+  </div>
+</header>
+<div class="theme-row">{% include theme-picker.html %}</div>
+<hr class="header-rule">

@@ -1,0 +1,6 @@
+{% assign shown_posts = include.posts | default: site.posts %}
+<ul class="post-list">
+{% for post in shown_posts limit:include.limit %}
+  <li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d/%m' }}</time><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
+{% endfor %}
+</ul>
