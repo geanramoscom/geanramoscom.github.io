@@ -136,7 +136,7 @@ bundle exec jekyll build
     <figcaption>Primeira imagem</figcaption>
   </figure>
   <figure>
-    <img src="/img/erro-404.png" width="80" height="87"
+    <img src="/img/erro-404.png" width="280" height="280"
          loading="lazy" alt="Ilustração da página 404">
     <figcaption>Segunda imagem</figcaption>
   </figure>
