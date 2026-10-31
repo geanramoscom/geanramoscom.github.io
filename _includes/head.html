@@ -65,6 +65,7 @@
 if(!['light','dark','brown'].includes(t))t=window.matchMedia&&matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
 document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t==='light'?'light':'dark';})();
 </script>
+{% if page.layout == 'post' %}<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">{% endif %}
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261031-7">
 
 {% if page.layout == 'post' %}
