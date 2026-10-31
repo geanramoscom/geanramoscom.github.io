@@ -6,11 +6,9 @@
 <main id="conteudo">{{ content }}</main>
 {% include footer.html %}
 </div>
-{% assign floating_share_title = page.title | default: site.title %}
 {% assign floating_share_url = page.url | absolute_url %}
-{% capture floating_share_message %}Li esse post e lembrei de você. Dá uma olhada e depois me diga o que achou!
+{% capture floating_share_message %}Vi esse post e lembrei de você! Dá uma olhada e me diz o que achou. 😊
 
-{{ floating_share_title }}
 {{ floating_share_url }}{% endcapture %}
 <a class="floating-wa-share" href="https://api.whatsapp.com/send?text={{ floating_share_message | strip | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar esta página pelo WhatsApp" title="Compartilhar pelo WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
 <style>
