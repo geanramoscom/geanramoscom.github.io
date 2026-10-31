@@ -5,7 +5,7 @@
   <div class="post-share-links">
     <a class="share-whatsapp" href="https://api.whatsapp.com/send?text={{ share_title | append: ' ' | append: share_url | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar pelo WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span></a>
     <a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ share_url | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a>
-    <a class="share-x" href="https://twitter.com/intent/tweet?text={{ share_title | url_encode }}&url={{ share_url | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span>X</span></a>
+    <a class="share-x" href="https://twitter.com/intent/tweet?text={{ share_title | url_encode }}&url={{ share_url | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no X (antigo Twitter)"><i class="fa-brands fa-twitter" aria-hidden="true"></i><span>Twitter / X</span></a>
     <a class="share-telegram" href="https://t.me/share/url?url={{ share_url | url_encode }}&text={{ share_title | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no Telegram"><i class="fa-brands fa-telegram" aria-hidden="true"></i><span>Telegram</span></a>
     <button class="share-native" type="button" data-share-url="{{ share_url | escape }}" data-share-title="{{ share_title | escape }}" aria-label="Abrir opções de compartilhamento do dispositivo" hidden><i class="fa-solid fa-share-nodes" aria-hidden="true"></i><span>Compartilhar</span></button>
     <button class="post-share-copy" type="button" data-share-url="{{ share_url | escape }}" aria-label="Copiar link do artigo"><i class="fa-solid fa-link" aria-hidden="true"></i><span>Copiar link</span></button>
@@ -18,7 +18,7 @@
 .post-share-links{display:flex;flex-wrap:wrap;gap:.6rem}
 .post-share-links a,.post-share-links button{display:inline-flex;gap:.45rem;align-items:center;justify-content:center;min-height:42px;padding:.55rem .85rem;border:1px solid transparent;border-radius:.65rem;color:#fff;background:#444;font:inherit;font-size:.88rem;line-height:1.3;text-decoration:none;cursor:pointer}
 .post-share-links i{font-size:19px;line-height:1;flex:none}
-.post-share-links .share-whatsapp{background:#128c4a}.post-share-links .share-facebook{background:#1877f2}.post-share-links .share-x{background:#111}.post-share-links .share-telegram{background:#168ac2}
+.post-share-links .share-whatsapp{background:#128c4a}.post-share-links .share-facebook{background:#1877f2}.post-share-links .share-x{background:#1da1f2}.post-share-links .share-telegram{background:#168ac2}
 .post-share-links .share-native,.post-share-links .post-share-copy{background:#555}
 .post-share-links a:hover,.post-share-links button:hover{filter:brightness(1.12)}
 .post-share-links a:focus-visible,.post-share-links button:focus-visible{outline:2px solid currentColor;outline-offset:3px}
