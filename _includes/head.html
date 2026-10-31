@@ -41,7 +41,7 @@
 if(!['light','dark','brown'].includes(t))t=window.matchMedia&&matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
 document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t==='light'?'light':'dark';})();
 </script>
-<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261031-3">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261031-5">
 
 {% if page.layout == 'post' %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.19.1/katex.min.css">
