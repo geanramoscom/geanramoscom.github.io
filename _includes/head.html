@@ -42,3 +42,10 @@ if(!['light','dark','brown'].includes(t))t=window.matchMedia&&matchMedia('(prefe
 document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t==='light'?'light':'dark';})();
 </script>
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261031-3">
+
+{% if page.layout == 'post' %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.19.1/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.19.1/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.19.1/contrib/auto-render.min.js"></script>
+<script defer src="{{ '/assets/js/math.js' | relative_url }}?v=1"></script>
+{% endif %}

@@ -108,11 +108,11 @@ O SmartyPants substitui determinados sinais ASCII por caracteres tipográficos a
 
 Com o [KaTeX](https://khan.github.io/KaTeX/), você pode apresentar expressões matemáticas. Um exemplo citado no documento original é a função gama:
 
-```latex
-\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}\,dt
-```
+<div class="math-display" data-tex="\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}\,dt"></div>
 
-**Nota técnica:** este exemplo aparece como código-fonte porque a V2 ainda não carrega o renderizador KaTeX. Isso evita apresentar uma fórmula quebrada.
+E uma expressão no meio do texto: \(E = mc^2\).
+
+**Suporte ativo:** o KaTeX agora renderiza as fórmulas matemáticas. Trechos dentro de blocos de código continuam sendo mostrados como código.
 
 ### Diagramas com Mermaid
 

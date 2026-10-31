@@ -41,3 +41,6 @@ p{margin:0 0 27px}.prose p,.prose ul,.prose ol{margin-bottom:27px}.prose ul,.pro
 
 /* Footer alignment */
 .site-footer{text-align:center;}
+
+/* KaTeX responsive math */
+.prose .math-display,.prose .katex-display{max-width:100%;overflow-x:auto;overflow-y:hidden;padding:12px 0}
