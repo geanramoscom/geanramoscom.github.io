@@ -59,3 +59,30 @@ p{margin:0 0 27px}.prose p,.prose ul,.prose ol{margin-bottom:27px}.prose ul,.pro
 .prose .plyr{width:100%;max-width:100%;--plyr-color-main:var(--accent)}
 .prose .video-embed.plyr__video-embed{width:100%;max-width:100%;aspect-ratio:16/9;position:relative;background:#000;border-radius:8px;overflow:hidden}
 .prose .video-embed.plyr__video-embed iframe{width:100%;height:100%;position:absolute;inset:0;border:0}
+
+/* Plyr follows the three theme palettes and clips all video layers */
+.prose .plyr,
+.prose .plyr--video,
+.prose .video-embed.plyr__video-embed {
+  --plyr-color-main: var(--accent);
+  --plyr-video-control-background-hover: var(--accent);
+  --plyr-range-fill-background: var(--accent);
+  border-radius: 12px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.prose .plyr__video-wrapper,
+.prose .plyr__poster,
+.prose .plyr__video-embed,
+.prose .plyr__video-embed iframe {
+  border-radius: inherit;
+}
+.prose .plyr__control--overlaid {
+  background: var(--accent);
+  color: var(--bg);
+}
+.prose .plyr__control--overlaid:hover,
+.prose .plyr__control--overlaid:focus-visible {
+  background: var(--accent);
+  filter: brightness(1.08);
+}
