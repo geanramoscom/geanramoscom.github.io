@@ -8,7 +8,11 @@
 </div>
 {% assign floating_share_title = page.title | default: site.title %}
 {% assign floating_share_url = page.url | absolute_url %}
-<a class="floating-wa-share" href="https://api.whatsapp.com/send?text={{ 'Li esse post e lembrei de você. Dá uma olhada e depois me diga o que achou!\n\n' | append: floating_share_title | append: '\n' | append: floating_share_url | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar esta página pelo WhatsApp" title="Compartilhar pelo WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+{% capture floating_share_message %}Li esse post e lembrei de você. Dá uma olhada e depois me diga o que achou!
+
+{{ floating_share_title }}
+{{ floating_share_url }}{% endcapture %}
+<a class="floating-wa-share" href="https://api.whatsapp.com/send?text={{ floating_share_message | strip | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar esta página pelo WhatsApp" title="Compartilhar pelo WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
 <style>
 .floating-wa-share{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:calc(20px + env(safe-area-inset-bottom));width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#128c4a;color:#fff;box-shadow:0 4px 14px #0004;text-decoration:none;z-index:1000;transition:transform .15s ease,box-shadow .15s ease}
 .floating-wa-share i{font-size:29px;line-height:1}
