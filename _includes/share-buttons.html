@@ -3,10 +3,12 @@
 <section class="post-share" aria-label="Compartilhar este artigo">
   <p class="post-share-label">Gostou do artigo? Compartilhe:</p>
   <div class="post-share-links">
-    <a href="https://api.whatsapp.com/send?text={{ share_title | append: ' ' | append: share_url | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar pelo WhatsApp">WhatsApp</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no Facebook">Facebook</a>
-    <a href="https://t.me/share/url?url={{ share_url | url_encode }}&text={{ share_title | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no Telegram">Telegram</a>
-    <button class="post-share-copy" type="button" data-share-url="{{ share_url | escape }}">Copiar link</button>
+    <a class="share-whatsapp" href="https://api.whatsapp.com/send?text={{ share_title | append: ' ' | append: share_url | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar pelo WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.15-1.49A9.98 9.98 0 1 0 12.04 2Zm0 18.1a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.05.88.91-2.97-.2-.31A8.12 8.12 0 1 1 12.04 20.1Zm4.46-6.07c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.93-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.02-.37.1-.49l.36-.42c.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.33.98 2.49c.12.16 1.69 2.59 4.1 3.63.57.25 1.02.4 1.37.51.58.18 1.11.15 1.53.09.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28Z"/></svg><span>WhatsApp</span></a>
+    <a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ share_url | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.7 22v-9h3l.45-3.5H13.7V7.27c0-1.01.28-1.7 1.74-1.7h1.85V2.44A24.7 24.7 0 0 0 14.6 2c-2.68 0-4.51 1.64-4.51 4.64V9.5H7v3.5h3.09v9h3.61Z"/></svg><span>Facebook</span></a>
+    <a class="share-x" href="https://twitter.com/intent/tweet?text={{ share_title | url_encode }}&url={{ share_url | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.78 7.75L23.2 22h-6.25l-4.9-7.43L5.55 22H2.42l7.25-8.28L1.8 2h6.4l4.43 6.76L18.9 2Zm-1.1 18h1.72L7.25 3.9H5.4L17.8 20Z"/></svg><span>X</span></a>
+    <a class="share-telegram" href="https://t.me/share/url?url={{ share_url | url_encode }}&text={{ share_title | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.94 4.66c.27-1.21-.45-1.68-1.34-1.35L2.35 10.35c-1.25.49-1.23 1.2-.22 1.52l4.68 1.46L17.65 6.5c.51-.31.98-.14.6.2L9.46 14.6l-.33 4.99c.49 0 .7-.22.96-.48l2.31-2.25 4.81 3.55c.89.49 1.53.24 1.75-.83l2.98-14.92Z"/></svg><span>Telegram</span></a>
+    <button class="share-native" type="button" data-share-url="{{ share_url | escape }}" data-share-title="{{ share_title | escape }}" aria-label="Abrir opções de compartilhamento do dispositivo" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="5" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m7.5 10.7 7.8-4.3M7.5 13.3l7.8 4.3" stroke="currentColor" stroke-width="2" fill="none"/></svg><span>Compartilhar</span></button>
+    <button class="post-share-copy" type="button" data-share-url="{{ share_url | escape }}" aria-label="Copiar link do artigo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H6a3 3 0 0 0-3 3v11a3 3 0 0 0 3 3h11a3 3 0 0 0 3-3v-2h-2v2a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h2V4Zm4-2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h7a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3h-7Zm0 2h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"/></svg><span>Copiar link</span></button>
   </div>
   <span class="post-share-feedback" role="status" aria-live="polite"></span>
 </section>
@@ -14,21 +16,29 @@
 .post-share{margin:2rem 0 1rem;padding:1rem 0;border-top:1px solid currentColor}
 .post-share-label{font-weight:600;margin:0 0 .75rem}
 .post-share-links{display:flex;flex-wrap:wrap;gap:.6rem}
-.post-share-links a,.post-share-links button{display:inline-flex;align-items:center;justify-content:center;padding:.55rem .85rem;border:1px solid currentColor;border-radius:.65rem;color:inherit;background:transparent;font:inherit;font-size:.9rem;line-height:1.3;text-decoration:none;cursor:pointer}
-.post-share-links a:hover,.post-share-links button:hover{background:color-mix(in srgb,currentColor 9%,transparent)}
+.post-share-links a,.post-share-links button{display:inline-flex;gap:.45rem;align-items:center;justify-content:center;min-height:42px;padding:.55rem .85rem;border:1px solid transparent;border-radius:.65rem;color:#fff;background:#444;font:inherit;font-size:.88rem;line-height:1.3;text-decoration:none;cursor:pointer}
+.post-share-links svg{width:19px;height:19px;fill:currentColor;flex:none}
+.post-share-links .share-whatsapp{background:#128c4a}.post-share-links .share-facebook{background:#1877f2}.post-share-links .share-x{background:#111}.post-share-links .share-telegram{background:#168ac2}
+.post-share-links .share-native,.post-share-links .post-share-copy{background:#555}
+.post-share-links a:hover,.post-share-links button:hover{filter:brightness(1.12)}
 .post-share-links a:focus-visible,.post-share-links button:focus-visible{outline:2px solid currentColor;outline-offset:3px}
 .post-share-feedback{display:block;min-height:1.2em;margin-top:.3rem;font-size:.8rem}
 </style>
 <script>
-document.addEventListener('click',async function(event){
-  var button=event.target.closest('.post-share-copy');
-  if(!button)return;
-  var feedback=button.closest('.post-share').querySelector('.post-share-feedback');
-  try{
-    await navigator.clipboard.writeText(button.dataset.shareUrl);
-    feedback.textContent='Link copiado!';
-  }catch(e){
-    feedback.textContent='Não foi possível copiar automaticamente. Copie o endereço da página.';
-  }
-});
+(function(){
+  var nativeButton=document.querySelector('.post-share .share-native');
+  if(nativeButton&&typeof navigator.share==='function')nativeButton.hidden=false;
+  document.addEventListener('click',async function(event){
+    var button=event.target.closest('.post-share-copy,.share-native');
+    if(!button)return;
+    var feedback=button.closest('.post-share').querySelector('.post-share-feedback');
+    if(button.classList.contains('share-native')){
+      try{await navigator.share({title:button.dataset.shareTitle,url:button.dataset.shareUrl});feedback.textContent='';}
+      catch(e){if(e.name!=='AbortError')feedback.textContent='Não foi possível abrir o compartilhamento.';}
+      return;
+    }
+    try{await navigator.clipboard.writeText(button.dataset.shareUrl);feedback.textContent='Link copiado!';}
+    catch(e){feedback.textContent='Não foi possível copiar automaticamente. Copie o endereço da página.';}
+  });
+})();
 </script>
