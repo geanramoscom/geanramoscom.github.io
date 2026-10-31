@@ -18,5 +18,6 @@ exclude:
   - node_modules
   - Gemfile
   - Gemfile.lock
+  - Gemfile.github-pages
   - assets/css/input.css
   - .github

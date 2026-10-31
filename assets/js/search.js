@@ -1,12 +1,19 @@
 (() => {
- const field=document.querySelector('#archive-search'),list=document.querySelector('#archive-list'),status=document.querySelector('#search-results');
- if(!field||!list)return;
- const nodes=[...list.querySelectorAll('.archive-entry')];
- const normalize=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
- field.addEventListener('input',()=>{
-  const q=normalize(field.value.trim());let shown=0;
-  nodes.forEach(n=>{const match=normalize(n.textContent).includes(q);n.hidden=!match;if(match)shown++});
-  list.querySelectorAll('.year-heading').forEach(h=>{let el=h.nextElementSibling,any=false;while(el&&!el.classList.contains('year-heading')){if(el.classList.contains('archive-entry')&&!el.hidden)any=true;el=el.nextElementSibling}h.hidden=!any});
-  status.textContent=q?(shown?shown+' publicações encontradas':'Nenhuma publicação encontrada'):'';
- });
+const field=document.querySelector('#site-search-input'),results=document.querySelector('#site-search-results');
+if(!field||!results)return;
+const norm=s=>(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+let cache=null,job=0;
+field.addEventListener('input',async()=>{
+const q=norm(field.value.trim()),ticket=++job;
+results.replaceChildren();
+if(q.length<2)return;
+try{
+if(!cache){const r=await fetch('/search.json');if(!r.ok)throw Error('index');cache=await r.json();}
+if(ticket!==job)return;
+const found=cache.filter(p=>norm([p.title,p.text,...(p.tags||[])].join(' ')).includes(q)).slice(0,12);
+if(!found.length){results.textContent='Nenhuma publicação encontrada.';return;}
+const ul=document.createElement('ul');
+for(const p of found){const li=document.createElement('li'),a=document.createElement('a');a.href=p.url;a.textContent=p.title;li.append(a);ul.append(li);}results.append(ul);
+}catch(e){if(ticket===job)results.textContent='Busca indisponível neste momento.';}
+});
 })();

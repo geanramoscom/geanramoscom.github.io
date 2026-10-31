@@ -2,6 +2,8 @@
   url: /
 - label: Arquivo
   url: /arquivo/
+- label: Tags
+  url: /tags/
 - label: Sobre
   url: /sobre/
 - label: Contato

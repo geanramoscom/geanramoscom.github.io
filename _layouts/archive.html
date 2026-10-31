@@ -2,10 +2,7 @@
 layout: default
 ---
 <h1>Arquivo</h1>
-<p>Todos os textos publicados, organizados do mais recente ao mais antigo.</p>
-<label class="search-label" for="archive-search">Buscar no arquivo</label>
-<input id="archive-search" type="search" placeholder="Buscar por título..." autocomplete="off">
-<div id="search-results" role="status" aria-live="polite"></div>
+<p>Todos os textos publicados, organizados do mais recente ao mais antigo. Use a busca acima para pesquisar.</p>
 <div id="archive-list">
 {% assign current_year = '' %}
 {% for post in site.posts %}
@@ -14,4 +11,3 @@ layout: default
   <div class="archive-entry"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d/%m' }}</time><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></div>
 {% endfor %}
 </div>
-<script defer src="{{ '/assets/js/search.js' | relative_url }}"></script>

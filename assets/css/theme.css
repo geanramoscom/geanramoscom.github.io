@@ -20,3 +20,12 @@ p{margin:0 0 27px}.prose p,.prose ul,.prose ol{margin-bottom:27px}.prose ul,.pro
 #search-results{font-size:15px;color:var(--muted);min-height:22px}.archive-link{margin-top:27px}.post-meta{border-top:1px solid var(--border);padding-top:18px;color:var(--muted);font-size:16px}.post-tag{margin-right:12px}
 .prev-next{display:flex;justify-content:space-between;gap:18px;margin-top:36px}.prev-next a{max-width:48%}.site-footer{border-top:1px solid var(--border);margin-top:54px;padding-top:27px;color:var(--muted);font-size:15px}.site-footer p{margin:0 0 10px}
 [hidden]{display:none!important}@media(max-width:480px){.site-wrap{padding:28px 18px 60px}.avatar-link img{width:56px;height:56px}.site-header{gap:14px}.site-name{font-size:24px}.site-nav a{font-size:16px}h1{font-size:32px}.post-list li,.archive-entry{grid-template-columns:56px minmax(0,1fr);gap:12px}}
+
+.site-search{margin:0 0 32px}.site-search label,.newsletter-form label{display:block;font-size:15px;margin-bottom:7px;color:var(--muted)}
+.site-search input,.newsletter-controls input{width:100%;min-width:0;min-height:44px;padding:9px 12px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--fg);font:inherit}
+#site-search-results:empty{display:none}#site-search-results{font-size:16px;padding:12px 0}#site-search-results ul{padding:0 0 0 24px;margin:0}#site-search-results li{padding:3px 0}
+.newsletter{margin:54px 0 0;padding:27px 0;border-top:1px solid var(--border)}.newsletter h2{font-size:24px;margin:0 0 9px}.newsletter p{margin-bottom:16px}
+.newsletter-controls{display:flex;gap:9px}.newsletter-controls button{min-height:44px;padding:0 18px;border:1px solid var(--accent);border-radius:100px;background:var(--accent);color:var(--bg);font:inherit;cursor:pointer}
+.post-tag{display:inline-block;margin:0 8px 8px 0;padding:4px 12px;background:var(--surface);border:1px solid var(--border);border-radius:100px;text-decoration:none;color:var(--accent)}
+.tag-section{scroll-margin-top:20px}.site-footer{margin-top:0}
+@media(max-width:480px){.newsletter-controls{flex-direction:column}.newsletter-controls button{width:100%}}
