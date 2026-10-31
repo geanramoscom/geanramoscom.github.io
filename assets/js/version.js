@@ -10,7 +10,7 @@
   const minor = Number(parts[1]);
   if (!Number.isInteger(major) || !Number.isInteger(minor)) return;
 
-  const endpoint = 'https://api.github.com/repos/geanramoscom/geanramoscom.github.io/commits?sha=geanramos-v2&per_page=1';
+  const endpoint = 'https://api.github.com/repos/geanramoscom/geanramoscom.github.io/commits?sha=main&per_page=1';
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 5000);
 
