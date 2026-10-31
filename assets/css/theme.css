@@ -75,3 +75,5 @@ p{margin:0 0 27px}.prose p,.prose ul,.prose ol{margin-bottom:27px}.prose ul,.pro
   background: var(--accent);
   filter: brightness(1.08);
 }
+
+.footer-nav{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:0 10px;margin-bottom:12px}

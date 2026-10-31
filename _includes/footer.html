@@ -1,6 +1,7 @@
 {% include newsletter.html %}
 <footer class="site-footer">
 <p>© {{ site.time | date: '%Y' }} {{ site.author | escape }}. Feito para ler com calma.</p>
-<p><a href="{{ '/feed.xml' | relative_url }}">Atom</a> · <a href="{{ '/rss.xml' | relative_url }}">RSS</a> · <a href="https://feeds.feedburner.com/geanramos" rel="alternate">FeedBurner</a> · <a href="{{ '/sitemap.xml' | relative_url }}">Sitemap</a> · <a href="{{ '/llms.txt' | relative_url }}">llms.txt</a> · <a href="{{ '/contato/' | relative_url }}">Contato</a></p>
+<nav class="footer-nav" aria-label="Navegação do rodapé"><a href="{{ '/arquivo/' | relative_url }}">Arquivo</a> · <a href="{{ '/tags/' | relative_url }}">Tags</a> · <a href="{{ '/contato/' | relative_url }}">Contato</a> · <a href="{{ '/rss.xml' | relative_url }}">RSS</a></nav>
+<p><a href="{{ '/feed.xml' | relative_url }}">Atom</a> · <a href="https://feeds.feedburner.com/geanramos" rel="alternate">FeedBurner</a> · <a href="{{ '/sitemap.xml' | relative_url }}">Sitemap</a> · <a href="{{ '/llms.txt' | relative_url }}">llms.txt</a></p>
 </footer>
 <script defer src="{{ '/assets/js/theme.js' | relative_url }}"></script>
