@@ -1,5 +1,6 @@
 (() => {
-const field=document.querySelector('#site-search-input'),results=document.querySelector('#site-search-results');
+const field=document.querySelector('#site-search-input'),results=document.querySelector('#site-search-results'),form=document.querySelector('#archive-search-form');
+form?.addEventListener('submit',e=>{e.preventDefault();field?.dispatchEvent(new Event('input'));});
 if(!field||!results)return;
 const norm=s=>(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 let cache=null,job=0;

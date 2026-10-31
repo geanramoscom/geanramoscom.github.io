@@ -2,7 +2,8 @@
 layout: default
 ---
 <h1>Arquivo</h1>
-<p>Todos os textos publicados, organizados do mais recente ao mais antigo. Use a busca acima para pesquisar.</p>
+<p>Todos os textos publicados, do mais recente ao mais antigo. Busque por um assunto ou explore os artigos abaixo.</p>
+{% include search.html %}
 <div id="archive-list">
 {% assign current_year = '' %}
 {% for post in site.posts %}
