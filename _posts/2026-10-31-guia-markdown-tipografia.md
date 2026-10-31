@@ -112,8 +112,8 @@ bundle exec jekyll build
 ### Imagens e legendas
 
 <figure class="showcase-figure">
-  <img src="[/img/logo.png](https://get.pxhere.com/photo/code-code-editor-coding-computer-data-developing-development-ethernet-html-programmer-programming-screen-software-technology-work-1366450.jpg)" width="100%"  loading="lazy" alt="Logotipo ilustrado do blog Gean Ramos">
-  <figcaption>Imagem do próprio repositório, com legenda e texto alternativo.</figcaption>
+  ![Shibuya, Japan](https://images.unsplash.com/photo-1542052125323-e69ad37a47c2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA=)
+  <figcaption>Foto: [Jezael Melgoza](https://unsplash.com/pt-br/@jezar)</figcaption>
 </figure>
 
 <div class="showcase-gallery">
