@@ -5,4 +5,15 @@
 {% include header.html %}
 <main id="conteudo">{{ content }}</main>
 {% include footer.html %}
-</div></body></html>
+</div>
+{% assign floating_share_title = page.title | default: site.title %}
+{% assign floating_share_url = page.url | absolute_url %}
+<a class="floating-wa-share" href="https://api.whatsapp.com/send?text={{ floating_share_title | append: ' ' | append: floating_share_url | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar esta página pelo WhatsApp" title="Compartilhar pelo WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+<style>
+.floating-wa-share{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:calc(20px + env(safe-area-inset-bottom));width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#128c4a;color:#fff;box-shadow:0 4px 14px #0004;text-decoration:none;z-index:1000;transition:transform .15s ease,box-shadow .15s ease}
+.floating-wa-share i{font-size:29px;line-height:1}
+.floating-wa-share:hover{transform:translateY(-2px);box-shadow:0 6px 18px #0005}
+.floating-wa-share:focus-visible{outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 5px #128c4a}
+@media(max-width:480px){.floating-wa-share{width:48px;height:48px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom))}.floating-wa-share i{font-size:26px}}
+</style>
+</body></html>
