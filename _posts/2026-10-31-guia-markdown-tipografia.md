@@ -1,5 +1,6 @@
 ---
 layout: post
+video_player: plyr
 title: "Guia de Markdown e tipografia"
 description: "guia de boas-vindas, com exemplos de Markdown, fontes e vídeo incorporado para testar o visual do blog."
 date: 2026-10-31 00:30:00 -0300
@@ -155,8 +156,8 @@ A função gama também aparece mais acima neste artigo.
 
 O player abaixo ocupa **100% da coluna do artigo**, respeitando o formato 16:9, também no celular.
 
-<div class="video-embed">
-  <iframe src="https://www.youtube-nocookie.com/embed/4c7pbOxYn_A?start=13735" title="Vídeo incorporado em largura total para teste responsivo" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="video-embed plyr__video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/4c7pbOxYn_A?start=13735&amp;enablejsapi=1&amp;playsinline=1" title="Vídeo do YouTube com Plyr" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe>
 </div>
 
 ### Outros elementos editoriais
