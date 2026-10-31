@@ -48,3 +48,30 @@ p{margin:0 0 27px}.prose p,.prose ul,.prose ol{margin-bottom:27px}.prose ul,.pro
 
 /* Code font: JetBrains Mono */
 .prose pre,.prose pre code,.prose code,.prose kbd,.prose samp,.type-mono,.type-mono .type-headline{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Consolas,monospace;font-variant-ligatures:none}.prose pre code{font-size:15px;line-height:1.65}.prose :not(pre)>code{font-size:.88em;overflow-wrap:anywhere}
+
+/* Plyr follows the three theme palettes and clips all video layers */
+.prose .plyr,
+.prose .plyr--video,
+.prose .video-embed.plyr__video-embed {
+  --plyr-color-main: var(--accent);
+  --plyr-video-control-background-hover: var(--accent);
+  --plyr-range-fill-background: var(--accent);
+  border-radius: 12px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.prose .plyr__video-wrapper,
+.prose .plyr__poster,
+.prose .plyr__video-embed,
+.prose .plyr__video-embed iframe {
+  border-radius: inherit;
+}
+.prose .plyr__control--overlaid {
+  background: var(--accent);
+  color: var(--bg);
+}
+.prose .plyr__control--overlaid:hover,
+.prose .plyr__control--overlaid:focus-visible {
+  background: var(--accent);
+  filter: brightness(1.08);
+}
