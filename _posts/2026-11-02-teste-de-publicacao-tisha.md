@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Teste de publicação: o post chegou, amiga"
 date: 2026-11-02 20:42:33 -03:00
 description: "Uma publicação de teste para conferir o fluxo do Jekyll, do Markdown e do GitHub Pages no blog geanramos.com."
@@ -26,7 +27,7 @@ A publicação foi criada no formato usado pelo Jekyll, com:
 
 Parece simples. E é justamente aí que mora o perigo: as coisas mais básicas são as primeiras a fazer drama quando ninguém está olhando.
 
-Se você está lendo este texto no **geanramos.com**, o fluxo principal funcionou. O arquivo foi preparado para a pasta de posts do blog e enviado ao repositório que alimenta a publicação no GitHub Pages. Depois disso, o Jekyll transforma o Markdown em uma página que o navegador consegue mostrar sem fazer cara de paisagem.
+Este arquivo foi colocado na pasta de posts e registrado no clone local que alimenta o GitHub Pages. A etapa de publicação externa depende de revisão e autorização; ou seja, o teste pode existir no repositório antes de aparecer no site. Quando o fluxo autorizado for executado, o Jekyll transforma o Markdown em uma página que o navegador consegue mostrar sem fazer cara de paisagem.
 
 Traduzindo: este é o equivalente editorial de apertar o botão da campainha e esperar alguém responder.
 
