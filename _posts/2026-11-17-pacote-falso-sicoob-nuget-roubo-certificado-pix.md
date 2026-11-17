@@ -4,6 +4,7 @@ title: "O pacote oficial do Sicoob que ninguém do Sicoob publicou - e que rouba
 description: "Investigação revela pacote falso no NuGet com nome do Sicoob que roubava certificados digitais e senhas usados no Pix. Os 11 pacotes de apoio continuam no ar."
 date: 2026-11-17 00:40:00 -03:00
 tags: [tecnologia, segurança, pix, sicoob, cibersegurança]
+img: "https://www.catureba.com.br/wp-content/uploads/2024/05/foto1-28.jpg"
 ---
 
 Senta aqui, porque esse babado envolve Pix, certificado digital, um programador que se chama Naruto e um pacote com cara de oficial que não tinha nada de oficial.
