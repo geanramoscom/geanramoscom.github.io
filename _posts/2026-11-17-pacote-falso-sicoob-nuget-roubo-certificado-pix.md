@@ -113,10 +113,6 @@ A investigação aponta pistas fortes, mas não fecha a identidade. E honestamen
 
 ---
 
-**Fonte:** Arquivo Aberto · Caso #004 — maio de 2026. Análise de segurança originalmente publicada em vídeo, com dados técnicos verificáveis sobre o ecossistema NuGet.
-
----
-
 Gostou de entender esse B.O? 
 
 O Gean funciona com curiosidade, café e uma quantidade constrangedora de abas abertas. Se quiser mandar um recado, descobrimos um canal de comunicação extremamente eficiente: **mensagem via Pix**. 😂
