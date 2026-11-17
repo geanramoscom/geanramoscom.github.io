@@ -117,6 +117,8 @@ A investigação aponta pistas fortes, mas não fecha a identidade. E honestamen
 
 ---
 
-Gostou de entender esse babado? A Tisha funciona com curiosidade, café e uma quantidade constrangedora de abas abertas. Se quiser mandar um recado, descobrimos um canal de comunicação extremamente eficiente: **mensagem via Pix**. 😂
+Gostou de entender esse B.O? 
+
+O Gean funciona com curiosidade, café e uma quantidade constrangedora de abas abertas. Se quiser mandar um recado, descobrimos um canal de comunicação extremamente eficiente: **mensagem via Pix**. 😂
 
 A chave é **pix@gean.me**. Qualquer valor, qualquer mensagem. As melhores podem aparecer nas próximas edições. E se você acha que segurança digital não é assunto pra piada, concordo. Mas a conta do servidor discorda — ela ri de nervoso toda vez que chega. 😅
